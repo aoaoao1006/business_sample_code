@@ -12,14 +12,24 @@ def main():
 	with open('test.csv', newline='') as f:
 		reader = csv.reader(f)
 
+		# listと命名しているがString型.
+		list = ""
+
 		# カンマ3つの項目を想定とし項目ごとに出力する.
 		for row in reader:
-			cnt = str(row).count(',')
+			# カンマの数=項目数と想定し、繰返し回数を確定させている.
+			cnt = str(row).count(',') + 1
 
 			# 特定の項目(3つ目)だけ表示する.
-			for num in range(cnt+1):
+			for num in range(cnt):
 				if num == 2:
+					list = list + row[num].strip() + "\n"
 					print(row[num].strip())
+
+	# 最後に結果を表示.
+	# わざわざlist型ではなくString型にしているのは対象項目の値だけを表示させるため.
+	print("### 最後にまとめて表示してみる. ###")
+	print(list)
 
 # 初期化のあれ.
 if __name__ == "__main__":
