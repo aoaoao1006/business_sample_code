@@ -22,7 +22,7 @@ def main():
 			for num in range(cnt):
 				if num == 2:
 					list = list + row[num].strip() + "\n"
-					print(row[num].strip())
+					# print(row[num].strip())
 
 	# 最後に結果を表示.
 	# わざわざlist型ではなくString型にしているのは対象項目の値だけを表示させるため.
